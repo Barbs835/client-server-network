@@ -31,7 +31,8 @@ Open a new terminal (Git Bash, command line etc.) and execute the following:
 $ python client.py
 ```
 The client should now be connected to your server. Follow the instruction messages on the terminal. 
-user_guidelines.md file provides user instructions on how to interact with the network application.
+
+Also ```user_guidelines.md``` file provides user instructions on how to interact with the network application.
 
 ### Test
 Test code runt Python unit and performance tests.
