@@ -5,11 +5,14 @@
 ### Project Description
 
 This project provides an application solution to run a simple client/server network where the user has the ability to send either dictionary (in form of JSON, XML of binary format) or text file to the server. Also, the user has an option to choose whether the dictionary should be encrypted.
-### How to Install and Run the Project
-Requirements file contains all of the software components required for this project to work as intended. File name is as follows:
-requirements.txt
 
-The main code is in the following file:
+### How to Install and Run the Project
+Requirements file contains all of the software components required for this project to work as intended. 
+The file name is:
+```
+requirements.txt
+```
+The main code is in the following files:
 ```
 client.py
 server.py
