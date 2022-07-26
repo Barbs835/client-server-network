@@ -73,6 +73,6 @@ def start():
         # Print the amount of client connections to the server (subtracting 1 as there is 1
         # active connection on the server that is always running and listening
         print(f"[ACTIVE CONNECTIONS] {threading.activeCount()-1}")
-    print("[STARTING] server is starting...")
 
+print("[STARTING] server is starting...")
 start()
