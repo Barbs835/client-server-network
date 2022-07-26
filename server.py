@@ -19,9 +19,9 @@ DISCONNECT_MESSAGE = "!DISCONNECT"
 # socket can  communicate with (in this case, Internet Protocol v4 addresses).
 # SOCK_STREAM is a transmission mechanism (in this case, two-way byte streams of data).
 # Anything that connects to the specified IP & port now, will hit that socket.
-server_socket = socket.socket(socket.AF_INET, sockets.SOCK_STREAM)
+server = socket.socket(socket.AF_INET, sockets.SOCK_STREAM)
 # Binding socket to the  address of the server
-server_socket.bind(ADDR)
+server.bind(ADDR)
 
 
 def handle_client(conn, addr):
@@ -51,3 +51,27 @@ def handle_client(conn, addr):
         print(f"[{addr}] {msg}")
     # Close the connection
     conn.close()
+
+def start():
+    """Starts the socket and allows our server to start listening for connections & then
+    handling those connections by passing them to handle_client(conn, addr) function which
+    will run in a new thread.
+    """
+    server.listen()
+    print(f"[SERVER IS LISTENING] Server is listening on {SERVER}")
+    # Server will continue to listen while it is not turned off/ crashed etc.
+    while True:
+        # This line of code blocks the process by waiting for new connection to the server
+        # When connection occurs server stores the "conn" socket object and connection address
+        conn, addr = server.accept()
+        # Passing the new connection socket object and address to the handle_client function
+        # Each clinet connection will be handled in a new thread
+        # target is the collable object
+        thread = threading.Thread(target=handle_client, args=(conn, addr))
+        thread.start()
+        # Print the amount of client connections to the server (subtracting 1 as there is 1
+        # active connection on the server that is always running and listening
+        print(f"[ACTIVE CONNECTIONS] {threading.activeCount()-1}")
+print("[STARTING] server is starting..."
+
+start()
