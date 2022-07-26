@@ -13,7 +13,7 @@ ADDR = (SERVER, PORT)
 # Length of message in bytes
 HEADER = 50
 FORMAT = "utf-8"
-DISCONNECT_MESSAGE = "!DISCONNECT"
+DISCONNECT_MESSAGE = "DISCONNECT"
 
 # Creating a new socket (AF_INET argument  determines  family of # addresses that this
 # socket can  communicate with (in this case, Internet Protocol v4 addresses).
@@ -46,7 +46,7 @@ def handle_client(conn, addr):
         if msg_length:
             msg_length = int(msg_length)
             # Receiving the actual message
-            msg = conn.recv(msg_lengt).decode(FORMAT)
+            msg = conn.recv(msg_length).decode(FORMAT)
             if msg == DISCONNECT_MESSAGE:
                 connected = False
             # Printing the received message and where it came from
