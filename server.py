@@ -42,14 +42,15 @@ def handle_client(conn, addr):
         # untill it recevies a message from the client.
         # HEADER argument determines the accepted max length of the coming message
         msg_length = conn.recv(HEADER).decode(FORMAT)
-        if msg_length is not None:
+        # If message length is not none
+        if msg_length:
             msg_length = int(msg_length)
             # Receiving the actual message
             msg = conn.recv(msg_lengt).decode(FORMAT)
             if msg == DISCONNECT_MESSAGE:
                 connected = False
-        # Printing the received message and where it came from
-        print(f"[{addr}] {msg}")
+            # Printing the received message and where it came from
+            print(f"[{addr}] {msg}")
     # Close the connection
     conn.close()
 
