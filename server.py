@@ -19,7 +19,7 @@ DISCONNECT_MESSAGE = "!DISCONNECT"
 # socket can  communicate with (in this case, Internet Protocol v4 addresses).
 # SOCK_STREAM is a transmission mechanism (in this case, two-way byte streams of data).
 # Anything that connects to the specified IP & port now, will hit that socket.
-server = socket.socket(socket.AF_INET, sockets.SOCK_STREAM)
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Binding socket to the  address of the server
 server.bind(ADDR)
 
@@ -72,6 +72,6 @@ def start():
         # Print the amount of client connections to the server (subtracting 1 as there is 1
         # active connection on the server that is always running and listening
         print(f"[ACTIVE CONNECTIONS] {threading.activeCount()-1}")
-print("[STARTING] server is starting..."
+    print("[STARTING] server is starting...")
 
 start()
