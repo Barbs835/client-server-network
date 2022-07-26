@@ -14,4 +14,6 @@ ADDR = (SERVER, PORT)
 # SOCK_STREAM is a transmission mechanism (in this case, two-way byte streams of data).
 # Anything that connects to the specified IP & port now, will hit that socket.
 server_socket = socket.socket(socket.AF_INET, sockets.SOCK_STREAM)
+# Binding socket to the  address of the server
+server_socket.bind(ADDR)
 
