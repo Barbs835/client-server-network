@@ -29,7 +29,6 @@ def handle_client(conn, addr):
     individual client. With use of threading module it will be possible to handle
     several clients in one process (each client in a separate thread). This function
     will run concurrently with the start() function.
-
     When a new connection to the server occurs, we will store the address of that
     connection (client's IP address and port) as addr and the socket object as conn
     param addr: client's address
