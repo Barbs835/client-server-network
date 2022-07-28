@@ -5,24 +5,40 @@ import socket
 PORT = 5050
 SERVER = "192.168.0.44"
 ADDR = (SERVER, PORT)
-
 FORMAT = "utf-8"
 DISCONNECT_MESSAGE = "DISCONNECT"
-HEADER = 50
-# Setting up the socket ofr the client
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# Connecting to the server
-client.connect(ADDR)
+HEADER = 1024
 
-def send(msg):
+
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+
+
+def connect_to_server():
+    try:
+        # Connecting to the server
+        client.connect(ADDR)
+        print('[CONNECTED]')
+        return True
+    except ConnectionRefusedError:
+        print(f"No connection could be made. Check if there is a server running at IP, Port: {ADDR}")
+        return False
+
+
+def send_txt_file(txt_file):
     """
-    User will input a message and it will be sent to the server
-    param msg: User's input in form of dictionary or text file
+    reads the txt_file saved in the same directory as the client.py program and
+    sends it to the server.
+    :param txt_file_name: name and extention of the file for example "letter.txt"
+    :return: True if file is sent and False otherwise
     """
-    message = msg.encode(FORMAT)
-    msg_length = len(message)
-    send_length = str(msg_length).encode(FORMAT)
-    # Pad the message to make the lenght equal 50 bytes (HEADER)
-    send_length += b' ' * (HEADER - len(send_length))
-    client.send(send_length)
-    client.send(message)
+    with open(txt_file, 'rb') as file_to_send:
+        for data in file_to_send:
+            client.sendall(data)
+    print('end')
+    client.close()
+
+
+
+connect_to_server()
+send_txt_file('toSend.txt')

@@ -3,8 +3,6 @@ import threading
 
 
 
-# Setting up constants.
-
 # Assigning non-privileged port.
 PORT = 5050
 # Finding local host's IP address.
@@ -36,26 +34,18 @@ def handle_client( conn, addr):
     param addr: client's socket
     """
     print(f"[NEW CONNECTION] {addr} connected.")
-    connected = True
-    while connected:
-        msg = conn.recv(HEADER).decode()
-        # If data  is none
-        if len(msg) == 0:
-            return
-        if msg == DISCONNECT_MESSAGE:
-            # Close the connection
-            print(f"[DISCONNECTING] client at: {(addr)}")
-            conn.close()
-            break
-        if msg == "TXT":
-                with open('myTransfer.txt', 'wb') as file_to_write:
-                    while True:
-                        data = conn.recv(1024)
-                        print(data)
-                        if not data:
-                            break
-                        file_to_write.write(data)
-                        conn.close()
+
+    with open('myTransfer.txt', 'wb') as file_to_write:
+        while True:
+            data = conn.recv(HEADER)
+            if not data:
+                break
+            file_to_write.write(data)
+    print("Printing text file content:\n")
+    with open('myTransfer.txt', encoding=FORMAT) as f:
+        print(f.read())
+    conn.close()
+
 
 
 def start():
