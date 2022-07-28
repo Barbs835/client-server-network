@@ -8,7 +8,7 @@ socket.bind((HOST, PORT))
 socket.listen(1)
 conn, addr = socket.accept()
 
-def
+
 with open('myTransfer.txt', 'wb') as file_to_write:
     while True:
         data = conn.recv(1024)

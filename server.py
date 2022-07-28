@@ -11,9 +11,10 @@ PORT = 5050
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
 # Length of message in bytes
-HEADER = 50
+HEADER = 1024
 FORMAT = "utf-8"
 DISCONNECT_MESSAGE = "DISCONNECT"
+
 
 # Creating a new socket (AF_INET argument  determines  family of # addresses that this
 # socket can  communicate with (in this case, Internet Protocol v4 addresses).
@@ -24,7 +25,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
 
 
-def handle_client(conn, addr):
+def handle_client( conn, addr):
     """ This function will  handle all the communication between the server and
     individual client. With use of threading module it will be possible to handle
     several clients in one process (each client in a separate thread). This function
@@ -37,21 +38,25 @@ def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr} connected.")
     connected = True
     while connected:
-        # This is a "blocking line of code" where the server will not pass any message
-        # untill it recevies a message from the client.
-        # HEADER argument determines the accepted max length of the coming message
-        msg_length = conn.recv(HEADER).decode(FORMAT)
-        # If message length is not none
-        if msg_length:
-            msg_length = int(msg_length)
-            # Receiving the actual message
-            msg = conn.recv(msg_length).decode(FORMAT)
-            if msg == DISCONNECT_MESSAGE:
-                connected = False
-            # Printing the received message and where it came from
-            print(f"[{addr}] {msg}")
-    # Close the connection
-    conn.close()
+        msg = conn.recv(HEADER).decode()
+        # If data  is none
+        if len(msg) == 0:
+            return
+        if msg == DISCONNECT_MESSAGE:
+            # Close the connection
+            print(f"[DISCONNECTING] client at: {(addr)}")
+            conn.close()
+            break
+        if msg == "TXT":
+                with open('myTransfer.txt', 'wb') as file_to_write:
+                    while True:
+                        data = conn.recv(1024)
+                        print(data)
+                        if not data:
+                            break
+                        file_to_write.write(data)
+                        conn.close()
+
 
 def start():
     """Starts the socket and allows our server to start listening for connections & then
