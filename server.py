@@ -66,6 +66,7 @@ def start():
         thread = threading.Thread(target=handle_client, args=(conn, addr))
         thread.start()
         # Print the amount of client connections to the server (subtracting 1 as there is 1
+        # Print the amount of client connections to the server (subtracting 1 as there is 1
         # active connection on the server that is always running and listening
         print(f"[ACTIVE CONNECTIONS] {threading.activeCount()-1}")
 
