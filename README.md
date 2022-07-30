@@ -51,6 +51,8 @@ Loffer, D. (2020) "Building a Socket Server and Client with Python". Available a
 https://realpython.com/python-sockets/
 
 
+Rockikz, A. (2022) "How to Transfer Files in the Network using Sockets in Python". Available at: https://www.thepythoncode.com/article/send-receive-files-using-sockets-python
+
 
 ### License
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
