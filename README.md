@@ -41,6 +41,18 @@ This code has bee built with help of the following resources:
 ```
 please provide file name containing test code
 ```
+#### Credits
+
+Application has been built based on the following resources:
+
+Jennings, N. (2022) Socket Programming in Python (Guide). Available at: https://realpython.com/python-sockets/
+
+Loffer, D. (2020) "Building a Socket Server and Client with Python". Available at: https://morioh.com/p/1d5fd6c04b58
+https://realpython.com/python-sockets/
+
+
+Rockikz, A. (2022) "How to Transfer Files in the Network using Sockets in Python". Available at: https://www.thepythoncode.com/article/send-receive-files-using-sockets-python
+
 
 ### License
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
