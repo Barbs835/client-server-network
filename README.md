@@ -55,11 +55,6 @@ Unit_test_Server.py
 ```
 
 
-Credits
-This code has bee built with help of the following resources:
-```
-please provide file name containing test code
-```
 #### Credits
 
 Application has been built based on the following resources:
