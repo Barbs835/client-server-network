@@ -12,10 +12,16 @@ The file name is:
 ```
 requirements.txt
 ```
-The main code is in the following files:
+The main code is in the following directory path:
+folder:
+```
+**src**
+```
+files
 ```
 client.py
 server.py
+wiki_dict.py
 ```
 Supplement code:
 ```
