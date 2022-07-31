@@ -2,10 +2,6 @@ import socket
 import unittest
 import threading
 from os.path import exists as file_exists
-import pickle
-import dict2xml
-import json
-from src.client import parse_final_data
 from src.client import serialize
 
 
