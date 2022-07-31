@@ -53,9 +53,9 @@ Unit_test_client.py
 Unit_test_Server.py
 ```
 
-Automated test
+Automated test folder
 ```
-Automated_test
+test\Automated_test
 ```
 Automated test files:
 ```
