@@ -78,7 +78,8 @@ def send_data(serialized_data, PORT):
     serialized_data -- a string of serialized data
     PORT -- Server port number eg. 5000
     """
-    HOST = '127.0.0.1'  # Local machine
+    # getting HOST (which is the local machine) IP address
+    HOST = socket.gethostbyname(socket.gethostname()) 
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((HOST, PORT))
