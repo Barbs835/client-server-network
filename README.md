@@ -21,13 +21,10 @@ files
 ```
 client.py
 server.py
-wiki_dict.py
+english_wikipedia.txt
 ```
-Supplement code:
-```
-encryption.py
-```
-To run the network code, change directory to client_server_network folder on your terminal (Git Bash, command line etc.)  and execute the following:
+
+To run the network code, change directory to "src" folder on your terminal (Git Bash, command line etc.)  and execute the following:
 ```
 $ python server.py
 ```
@@ -38,10 +35,22 @@ $ python client.py
 ```
 The client should now be connected to your server. Follow the instruction messages on the terminal. 
 
-Also ```user_guidelines.md``` file provides user instructions on how to interact with the network application.
+
 
 ### Test
-Test code runt Python unit and performance tests.
+Test code runt Python unit, and performance tests.
+folder:
+```
+**test**
+```
+files
+```
+Unit_test_client.py
+Performance_test.py
+Unit_test_Server.py
+```
+
+
 Credits
 This code has bee built with help of the following resources:
 ```
