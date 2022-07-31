@@ -83,7 +83,7 @@ class test_Server_function(unittest.TestCase):
         server_host = "127.0.0.1"
         port = 5000
         timeout = 10
-        send_msg = "Hello"
+        send_msg = "This is server message"
         # mock a server
         mock_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         mock_server.settimeout(timeout)
