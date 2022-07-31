@@ -39,20 +39,35 @@ The client should now be connected to your server. Follow the instruction messag
 
 
 ### Test
-Test code runs Python unit, and performance tests.
+Test code runs Python unit test and automated test
 
 Code is in the below directory path.
 
 folder:
 ```
-test
+test 
 ```
-files:
+Unit test files:
 ```
 Unit_test_client.py
-Performance_test.py
 Unit_test_Server.py
 ```
+
+Automated test
+```
+Automated_test
+```
+Automated test files:
+```
+automated_test_sikuli.jar
+client.py
+server.py
+sikulixide-2.0.5.jar
+```
+Please note due to size limitation on GitHub , sikulixide-2.0.5.jar is not available. You may download directly from sikuli website.
+https://raiman.github.io/SikuliX1/downloads.html
+
+Sikuli is generally an open-sourced OCR tool designed for automation. Details of Sikuli can be found on : http://sikulix.com/
 
 
 #### Credits
