@@ -16,7 +16,7 @@ The main code is in the below directory path.
 
 folder:
 ```
-**src**
+src
 ```
 files:
 ```
@@ -45,7 +45,7 @@ Code is in the below directory path.
 
 folder:
 ```
-**test**
+test
 ```
 files:
 ```
