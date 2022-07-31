@@ -12,12 +12,13 @@ The file name is:
 ```
 requirements.txt
 ```
-The main code is in the following directory path:
+The main code is in the below directory path.
+
 folder:
 ```
 **src**
 ```
-files
+files:
 ```
 client.py
 server.py
@@ -38,12 +39,15 @@ The client should now be connected to your server. Follow the instruction messag
 
 
 ### Test
-Test code runt Python unit, and performance tests.
+Test code runs Python unit, and performance tests.
+
+Code is in the below directory path.
+
 folder:
 ```
 **test**
 ```
-files
+files:
 ```
 Unit_test_client.py
 Performance_test.py
