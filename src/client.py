@@ -105,9 +105,8 @@ def dictionary_enter():
 
 def serialize(default_dict, s_type):
     """Serialize data
-
-    Key arguments
-    default_dict -- value to use as a default if other value not provided
+    Key arguments:
+    default_dict -- dictionary object to use as a default if other dictionary is not provided
     s_type -- type of serilisation required
     """
     serialized = ""
