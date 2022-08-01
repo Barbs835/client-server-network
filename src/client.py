@@ -20,7 +20,7 @@ client_crupt_key = "sqcyNL5kz2mxWb1KL2QSZWY-GCERE-scEgWBbvq9CCk="
 default_dictionary = {}
 
 
-# Functions for encrpytion of dictionary
+# Functions for encryption of text
 def encrypt(message: bytes):
     """Encrypt the provided variable
 
@@ -66,8 +66,7 @@ def check_file():
                 return path
         if(path_split[len(path_split) - 1] != "txt"):
             print("### Filetype is incorrect")
-            print("### Please add your file ending in .txt that you wish to send into the src directory,\n"
-                  " then enter that filename ending in .txt here  ###")
+            print("### Please enter your filename ending in .txt ###")
         else:
             print("### File does not exist ###")
             print("### Please enter your filename ending in .txt ###")
@@ -182,7 +181,7 @@ def main():
     """File Section"""
     print("\n### File Section ###")
     # File choice and encrpytion
-    print("### Please enter your filename ending in .txt ###")
+    print("### To send text file, please add it  to src directory first, then  enter file name ending in .txt here ###")
 
     file_choice = check_file()
 

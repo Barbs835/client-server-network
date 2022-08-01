@@ -25,7 +25,7 @@ in_data = ""
 
 #Function for decrpytion of dictionary
 def decrypt(token: bytes):
-    """decrpytion of dictionary based on the KEY"""
+    """decryption of text based on the symmetric KEY"""
     try:
         return Fernet(server_crupt_key).decrypt(token)
     except (cryptography.fernet.InvalidToken, TypeError):
@@ -41,7 +41,7 @@ def start_server(PORT):
     global in_data
     #getting host IP address
     HOST = socket.gethostbyname(socket.gethostname())
-    time_out = 90       # The waiting time to receive input
+    time_out = 900       # The waiting time to receive input
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         try:
