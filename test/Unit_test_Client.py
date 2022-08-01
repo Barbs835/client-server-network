@@ -10,7 +10,7 @@ class test_Client_connectivity(unittest.TestCase):
     def run_mock_server(self):
         # Run a server to listen for a connection and then close it
         mock_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        mock_server.bind(('127.0.0.1', 5000))
+        mock_server.bind((socket.gethostbyname(socket.gethostname()), 5050))
         mock_server.listen(0)
         mock_server.accept()
         mock_server.close()
@@ -22,15 +22,15 @@ class test_Client_connectivity(unittest.TestCase):
 
         # Test the clients basic connection and disconnection
         mock_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        mock_client.connect(('127.0.0.1', 5000))
+        mock_client.connect((socket.gethostbyname(socket.gethostname()), 5050))
         mock_client.close()
 
         # Ensure server thread ends
         server_thread.join()
 
     def test_send_data(self):
-        server_host = "127.0.0.1"
-        port = 5000
+        server_host = socket.gethostbyname(socket.gethostname())
+        port = 5050
         timeout = 10
         send_data = "This is client message"
         # mock a server

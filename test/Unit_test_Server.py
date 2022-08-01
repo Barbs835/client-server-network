@@ -8,8 +8,8 @@ class test_Server_Connection(unittest.TestCase):
 
     # mock a server for testing
     def run_mock_server(self):
-        server_host = "127.0.0.1"
-        port = 5000
+        server_host = socket.gethostbyname(socket.gethostname())
+        port = 5050
         timeout = 10
         send_msg = "Hello"
         self.mock_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -20,15 +20,15 @@ class test_Server_Connection(unittest.TestCase):
 
     # test ping the server by ip
     def test_Server_Addr(self):
-        server_host = "127.0.0.1"
+        server_host = socket.gethostbyname(socket.gethostname())
         response = os.system("ping -n 1 " + server_host)
         self.assertEqual(response, 0, 'Server is unreachable')
 
     # validate the server port by a connection attempt
     def test_Server_Port(self):
         self.run_mock_server()
-        server_host = "127.0.0.1"
-        port = 5000
+        server_host = socket.gethostbyname(socket.gethostname())
+        port = 5050
         timeout = 5
         mock_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         mock_client.settimeout(timeout)
@@ -80,8 +80,8 @@ class test_Server_function(unittest.TestCase):
 
     # this is to mock a server and verify the message send and receive are aligned
     def test_mock_server_response(self):
-        server_host = "127.0.0.1"
-        port = 5000
+        server_host = socket.gethostbyname(socket.gethostname())
+        port = 5050
         timeout = 10
         send_msg = "This is server message"
         # mock a server
