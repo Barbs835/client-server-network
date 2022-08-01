@@ -26,7 +26,10 @@ in_data = ""
 #Function for decrpytion of dictionary
 def decrypt(token: bytes):
     """decrpytion of dictionary based on the KEY"""
-    return Fernet(server_crupt_key).decrypt(token)
+    try:
+        return Fernet(server_crupt_key).decrypt(token)
+    except (cryptography.fernet.InvalidToken, TypeError):
+        print("The token is invalid")
 
 # Starting the server at the defined port
 def start_server(PORT):
@@ -66,7 +69,7 @@ def serialized_receive():
     """Receiving Serialized data"""
 
     # Open server at port 5000
-    start_server(5000)
+    start_server(5050)
     full_data = in_data[2:-1].split('~')
 
     # Parse received data

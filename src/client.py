@@ -26,8 +26,10 @@ def encrypt(message: bytes):
 
     Key arguments
     message -- the value to be encrypted
+    Function annotation: message should be in byte format
     """
     return Fernet(client_crupt_key).encrypt(message)
+
 
 
 # Parse user input to make sure correct
@@ -64,7 +66,8 @@ def check_file():
                 return path
         if(path_split[len(path_split) - 1] != "txt"):
             print("### Filetype is incorrect")
-            print("### Please enter your filename ending in .txt ###")
+            print("### Please add your file ending in .txt that you wish to send into the src directory,\n"
+                  " then enter that filename ending in .txt here  ###")
         else:
             print("### File does not exist ###")
             print("### Please enter your filename ending in .txt ###")
@@ -173,7 +176,7 @@ def main():
     final_data = parse_final_data(method, serialized, option)
 
     # Send data to server
-    send_data(final_data, 5000)
+    send_data(final_data, 5050)
     print("### Your data has been sent ###")
 
     """File Section"""
