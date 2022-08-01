@@ -14,7 +14,6 @@ from cryptography.fernet import Fernet
 from os.path import exists as file_exists
 
 # Key for fernet encryption
-#crupt_key = "R29kemlsbGFJc0p1c3RBSHVnZVRvYWRDYWxsZWRUaW0="
 client_crupt_key = "sqcyNL5kz2mxWb1KL2QSZWY-GCERE-scEgWBbvq9CCk="
 
 default_dictionary = {}
