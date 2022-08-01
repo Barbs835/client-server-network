@@ -130,7 +130,7 @@ def parse_final_data(method, serialized, option):
     Key arguments
     method -- Serialization method: Pickle Binary (1), Json (2), XML (3)
     serialized -- the seralized data
-    option -- Output method: Print to Screen (1) or Save to File (2)
+    option -- Output method: Print to nScreen (1) or Save to File (2)
     """
     return method + '~' + str(serialized)[2:-1] + '~' + str(option)
 

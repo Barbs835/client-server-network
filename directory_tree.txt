@@ -1,0 +1,75 @@
+Folder PATH listing for volume OS
+Volume serial number is 1664-6F35
+C:.
+▒   license
+▒   README.md
+▒   requirements.txt
+▒   solution_design_document.docx
+▒
++---.idea
+▒   ▒   .gitignore
+▒   ▒   client_server_network.iml
+▒   ▒   misc.xml
+▒   ▒   modules.xml
+▒   ▒   vcs.xml
+▒   ▒   workspace.xml
+▒   ▒
+▒   +---inspectionProfiles
+▒   ▒       profiles_settings.xml
+▒   ▒
+▒   +---shelf
+▒       ▒   Uncommitted_changes_before_Update_at_2022-07-31_3_43_p_m___Changes_.xml
+▒       ▒
+▒       +---Uncommitted_changes_before_Update_at_2022-07-31_3_43_p_m__[Changes]
+▒               shelved.patch
+▒
++---mockup
+▒       assignm_req.txt
+▒       client.py
+▒       client_send_txt_file.py
+▒       coding_rsources.py
+▒       index.py
+▒       initial_design_client.py
+▒       initial_server_design.py
+▒       server.py
+▒       server_recv_txt_file.py
+▒
++---src
+▒       client.py
+▒       english_wikipedia.txt
+▒       myText.txt
+▒       myText_enc.txt
+▒       server.py
+▒
++---test
+    ▒   Automated Test.docx
+    ▒   Unit_test_Client.py
+    ▒   Unit_test_Server.py
+    ▒
+    +---Automated_test
+    ▒   ▒   automated_test_sikuli.jar
+    ▒   ▒   client.py
+    ▒   ▒   english_wikipedia.txt
+    ▒   ▒   server.py
+    ▒   ▒
+    ▒   +---Archive
+    ▒       +---automated_test.sikuli
+    ▒               1659284287459.png
+    ▒               1659284349170.png
+    ▒               1659284397919.png
+    ▒               1659284433566.png
+    ▒               1659284485390.png
+    ▒               1659284542405.png
+    ▒               1659285831277.png
+    ▒               1659285851225.png
+    ▒               1659285940914.png
+    ▒               1659285966197.png
+    ▒               1659286462478.png
+    ▒               1659286495500.png
+    ▒               1659286505192.png
+    ▒               automated_test.py
+    ▒
+    +---__pycache__
+            Unit_test_Client.cpython-310.pyc
+            Unit_test_Server.cpython-310.pyc
+
