@@ -36,7 +36,8 @@ def start_server(PORT):
     PORT -- the desired port number eg. 5000 or 5050
     """
     global in_data
-    HOST = '127.0.0.1'  # The client and server should run at the same Local machine
+    #getting host IP address
+    HOST = socket.gethostbyname(socket.gethostname())
     time_out = 90       # The waiting time to receive input
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
